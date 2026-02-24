@@ -171,12 +171,13 @@ a {
 
 .venture-card {
   border: 1px solid var(--ink);
-  min-height: 46svh;
+  min-height: auto;
   padding: 1rem;
   transform-origin: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(0, 0.65fr) minmax(0, 0.35fr);
+  gap: 0.9rem 1.2rem;
+  align-items: start;
   background: color-mix(in srgb, var(--paper) 96%, #fff 4%);
 }
 
@@ -197,9 +198,49 @@ a {
   text-transform: uppercase;
 }
 
+.venture-meta {
+  justify-self: end;
+  text-align: right;
+}
+
+.archive-projects {
+  grid-column: 1 / -1;
+  list-style: none;
+  margin: 0.55rem 0 0;
+  padding: 0.75rem 0 0;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 25%, transparent);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.45rem 1.1rem;
+}
+
+.archive-projects li {
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1.35;
+}
+
+.ventures-wrap.grid-mode .venture-card {
+  min-height: 32rem;
+  grid-template-columns: 1fr;
+  gap: 0.8rem;
+}
+
+.ventures-wrap.grid-mode .venture-meta {
+  justify-self: start;
+  text-align: left;
+}
+
+.ventures-wrap.grid-mode .archive-projects {
+  grid-template-columns: 1fr;
+  gap: 0.28rem;
+}
+
 .toggle-row {
   display: flex;
   justify-content: flex-end;
+  gap: 0.4rem;
   margin-bottom: 1rem;
 }
 
@@ -213,6 +254,11 @@ a {
   text-transform: uppercase;
   padding: 0.45rem 0.6rem;
   cursor: pointer;
+}
+
+.button.is-active {
+  background: var(--ink);
+  color: var(--paper);
 }
 
 .hero-actions {
@@ -359,6 +405,20 @@ a {
   text-transform: uppercase;
 }
 
+.workhq-title {
+  max-width: 13ch;
+  line-height: 0.92;
+}
+
+.workhq-hero-meta {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 0.75rem 1.5rem;
+}
+
 .transition-fade {
   opacity: 1;
 }
@@ -370,9 +430,25 @@ a {
   }
 
   .data-grid,
-  .ventures-wrap.grid-mode,
   .swatch-grid {
     grid-template-columns: 1fr;
+  }
+
+  .venture-card {
+    grid-template-columns: 1fr;
+  }
+
+  .venture-meta {
+    justify-self: start;
+    text-align: left;
+  }
+
+  .archive-projects {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ventures-wrap.grid-mode {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .site-header {
@@ -391,6 +467,24 @@ a {
 
   .quick-field-full {
     grid-column: auto;
+  }
+
+  .workhq-title {
+    max-width: none;
+  }
+
+  .workhq-hero-meta {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 560px) {
+  .archive-projects {
+    grid-template-columns: 1fr;
+  }
+
+  .ventures-wrap.grid-mode {
+    grid-template-columns: 1fr;
   }
 }
 

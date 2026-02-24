@@ -3,13 +3,13 @@ import Base from '@/layouts/Base.astro';
 import RevealText from '@/components/RevealText.astro';
 ---
 
-<Base title="Contact | WORK Launch Pad">
+<Base title="Contact | WORK Labs">
   <div class="section-shell">
     <section class="section-block">
       <div class="kicker"><span class="section-number">01 Contact</span><span>Partner Inquiry</span></div>
       <RevealText as="h1" variant="title" class="route-title">Partner Inquiry</RevealText>
       <RevealText as="p" variant="para" class="mt-5 max-w-2xl text-sm">
-        Share your current stage, constraints, and desired outcomes. We evaluate fit through Cost / Time / Impact.
+        Share your current stage, constraints, and desired outcomes. Note whether this is for WORK Labs execution, Launchpad startup program, or WORK-HQ retainers.
       </RevealText>
     </section>
 
@@ -36,6 +36,10 @@ import RevealText from '@/components/RevealText.astro';
           <input id="contact-goal" name="goal" type="text" required />
         </label>
         <label class="quick-field">
+          <span>Inquiry Type</span>
+          <input id="contact-track" name="track" type="text" placeholder="WORK Labs / Launchpad / WORK-HQ" />
+        </label>
+        <label class="quick-field">
           <span>Timeline</span>
           <input id="contact-timeline" name="timeline" type="text" required />
         </label>
@@ -57,7 +61,8 @@ import RevealText from '@/components/RevealText.astro';
     const map = [
       ['company', 'contact-company'],
       ['goal', 'contact-goal'],
-      ['timeline', 'contact-timeline']
+      ['timeline', 'contact-timeline'],
+      ['track', 'contact-track']
     ];
 
     map.forEach(([param, id]) => {

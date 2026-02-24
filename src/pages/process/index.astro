@@ -1,0 +1,31 @@
+---
+import Base from '@/layouts/Base.astro';
+import RevealText from '@/components/RevealText.astro';
+import { workPages } from '@/data/workPages';
+---
+
+<Base title="Process | WORK Labs">
+  <div class="section-shell">
+    <section class="section-block">
+      <div class="kicker"><span class="section-number">01 Process</span><span>WORK Labs Operating Detail</span></div>
+      <RevealText as="h1" variant="title" class="route-title">How WORK Labs Works</RevealText>
+      <RevealText as="p" variant="para" class="mt-5 max-w-3xl text-sm">
+        Structured pages for the core WORK Labs story: experience, process, flexibility, and delivery.
+      </RevealText>
+    </section>
+
+    <section class="section-block">
+      <div class="kicker"><span class="section-number">02 Topics</span><span>Build in Progress</span></div>
+      <div class="data-grid">
+        {workPages.map((page) => (
+          <a class="data-cell" href={`/process/${page.slug}`} data-transition-link>
+            <p class="text-xs uppercase tracking-[0.12em] text-slate">{page.index} {page.label}</p>
+            <h3 class="mt-2 text-base">{page.title}</h3>
+            <p class="text-sm mt-3">{page.summary}</p>
+            <p class="text-xs uppercase tracking-[0.1em] text-slate mt-4">{page.outcome}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+  </div>
+</Base>

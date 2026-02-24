@@ -26,19 +26,29 @@ export function initVenturesPage(scope: ParentNode = document) {
     });
   });
 
-  const button = scope.querySelector<HTMLButtonElement>('[data-grid-toggle]');
-  if (!button) return;
-  if (button.dataset.bound === 'true') return;
+  const toggles = Array.from(scope.querySelectorAll<HTMLButtonElement>('[data-view-toggle]'));
+  if (!toggles.length) return;
+  if (toggles[0]?.dataset.bound === 'true') return;
 
-  button.addEventListener('click', async () => {
+  const setView = async (view: 'list' | 'grid') => {
     await flipLayout(wrap, () => {
-      wrap.classList.toggle('grid-mode');
-      button.textContent = wrap.classList.contains('grid-mode') ? 'View Vertical' : 'View Grid';
+      wrap.classList.toggle('grid-mode', view === 'grid');
+      toggles.forEach((toggle) => {
+        const active = toggle.dataset.viewToggle === view;
+        toggle.classList.toggle('is-active', active);
+        toggle.setAttribute('aria-pressed', String(active));
+      });
     });
     ScrollTrigger.refresh();
-  });
+  };
 
-  button.dataset.bound = 'true';
+  toggles.forEach((toggle) => {
+    toggle.addEventListener('click', async () => {
+      const view = toggle.dataset.viewToggle === 'grid' ? 'grid' : 'list';
+      await setView(view);
+    });
+    toggle.dataset.bound = 'true';
+  });
 }
 
 export function killVenturesTriggers() {

@@ -1,41 +1,85 @@
 ---
 import Base from '@/layouts/Base.astro';
 import RevealText from '@/components/RevealText.astro';
+
+const offerings = [
+  {
+    index: '01',
+    title: 'Brand Foundation Build',
+    audience: 'Early-stage founders',
+    detail: 'Positioning, narrative, naming direction, identity system, and a practical brand toolkit for fundraising and first traction.'
+  },
+  {
+    index: '02',
+    title: 'Launchpad Program',
+    audience: 'Startup teams going to market',
+    detail: 'Structured program from strategic direction to launch execution. This is one defined program/package inside WORK Labs.'
+  },
+  {
+    index: '03',
+    title: 'Go-To-Market Execution',
+    audience: 'Founders preparing launch',
+    detail: 'Website, content stack, campaign assets, rollout plan, and launch operations managed through one accountable execution team.'
+  },
+  {
+    index: '04',
+    title: 'Growth Systems',
+    audience: 'Post-launch operators',
+    detail: 'Messaging refinement, offer architecture, content engine, and performance-oriented creative systems for ongoing growth.'
+  },
+  {
+    index: '05',
+    title: 'Fractional Brand Leadership',
+    audience: 'Teams without in-house senior lead',
+    detail: 'Embedded strategic/creative leadership for high-stakes decisions, priorities, and brand governance without full-time overhead.'
+  },
+  {
+    index: '06',
+    title: 'WORK-HQ Retainers',
+    audience: 'Founder and leadership teams',
+    detail: 'Consulting services and system-thinking retainers for ongoing advisory support. Distinct from production-focused execution.'
+  }
+];
 ---
 
-<Base title="Model | WORK Launch Pad">
+<Base title="Offerings | WORK Labs">
   <div class="section-shell">
-    <section class="section-block">
-      <div class="kicker"><span class="section-number">01 Model</span><span>Launch Pad Framework</span></div>
-      <RevealText as="h1" variant="title" class="route-title">Launch Pad Model</RevealText>
-    </section>
-
-    <section class="section-block">
-      <div class="kicker"><span class="section-number">02 CI</span><span>Collaborative Intelligence</span></div>
-      <RevealText as="p" variant="para" class="text-sm max-w-3xl">
-        AI + HI = CI. AI accelerates synthesis and scenario testing. Human operators set standards, context, and judgment.
+    <section class="section-block two-col">
+      <div>
+        <div class="kicker"><span class="section-number">01 Offerings</span><span>For Entrepreneur Audiences</span></div>
+        <RevealText as="h1" variant="title" class="route-title">WORK Labs Offer Architecture</RevealText>
+      </div>
+      <RevealText as="p" variant="para" class="text-sm max-w-md">
+        WORK Labs is a best-of-class agency that has evolved into a focused execution partner for founders and operators.
+        Launchpad is one program/package within a broader set of offerings.
       </RevealText>
     </section>
 
     <section class="section-block">
-      <div class="kicker"><span class="section-number">03 Brand Engineering</span><span>Asset Logic</span></div>
-      <RevealText as="p" variant="para" class="text-sm max-w-3xl">
-        We architect positioning, offer systems, and narrative structures to increase valuation and strategic optionality.
-      </RevealText>
+      <div class="kicker"><span class="section-number">02 Core Offerings</span><span>Pick By Stage</span></div>
+      <div class="data-grid">
+        {offerings.map((item) => (
+          <article class="data-cell">
+            <p class="text-xs uppercase tracking-[0.12em] text-slate">{item.index} {item.audience}</p>
+            <h3 class="mt-2 text-base">{item.title}</h3>
+            <p class="text-sm mt-2">{item.detail}</p>
+          </article>
+        ))}
+      </div>
     </section>
 
-    <section class="section-block">
-      <div class="kicker"><span class="section-number">04 Execution Network</span><span>Hybrid Studio</span></div>
-      <RevealText as="p" variant="para" class="text-sm max-w-3xl">
-        Core operators plus WORK & Friends create elastic capacity without bloated fixed overhead.
-      </RevealText>
-    </section>
-
-    <section class="section-block">
-      <div class="kicker"><span class="section-number">05 Equity Alignment</span><span>Upside Structures</span></div>
-      <RevealText as="p" variant="para" class="text-sm max-w-3xl">
-        Engagements are structured around retention, equity participation, royalties, and compound venture outcomes.
-      </RevealText>
+    <section class="section-block two-col">
+      <div>
+        <div class="kicker"><span class="section-number">03 Signature Program</span><span>Launchpad</span></div>
+        <RevealText as="p" variant="para" class="text-sm max-w-2xl">
+          Launchpad is the structured startup package for teams moving from concept to market-ready execution.
+        </RevealText>
+      </div>
+      <div class="hero-actions">
+        <a class="button cta-secondary" href="/launchpad" data-transition-link>View Launchpad Program</a>
+        <a class="button cta-secondary" href="/work-hq" data-transition-link>View WORK-HQ Retainers</a>
+        <a class="button cta-primary" href="/contact" data-transition-link>Discuss Best Fit</a>
+      </div>
     </section>
   </div>
 </Base>

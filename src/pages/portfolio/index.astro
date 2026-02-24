@@ -1,0 +1,66 @@
+---
+import Base from '@/layouts/Base.astro';
+import RevealText from '@/components/RevealText.astro';
+import { ventures } from '@/data/ventures';
+---
+
+<Base title="Portfolio | WORK Labs">
+  <div class="section-shell">
+    <section class="section-block">
+      <div class="kicker"><span class="section-number">01 Portfolio</span><span>Categories</span></div>
+      <RevealText as="h1" variant="title" class="route-title">Portfolio Categories</RevealText>
+      <div class="toggle-row" role="tablist" aria-label="Portfolio layout">
+        <button class="button is-active" type="button" data-view-toggle="list" aria-pressed="true">List</button>
+        <button class="button" type="button" data-view-toggle="grid" aria-pressed="false">Grid</button>
+      </div>
+      <div class="ventures-wrap" data-ventures-wrap>
+        {ventures.map((venture) => (
+          <a
+            class="venture-card"
+            href={`/portfolio/${venture.slug}`}
+            data-transition-link
+            data-flip-source={`venture-${venture.slug}`}
+          >
+            <div>
+              <p class="text-xs uppercase tracking-[0.12em] text-slate">{venture.index}</p>
+              <h2 class="venture-title">{venture.name}</h2>
+              <p class="mt-2 text-xs uppercase tracking-[0.1em] text-slate">{venture.metric}</p>
+            </div>
+            <div class="venture-meta">
+              <span class="pill">{venture.stage}</span>
+              <p class="mt-3 text-sm">{venture.focus}</p>
+            </div>
+            <ul class="archive-projects" aria-label={`${venture.name} projects`}>
+              {venture.projects.map((project) => (
+                <li>{project}</li>
+              ))}
+            </ul>
+          </a>
+        ))}
+      </div>
+    </section>
+  </div>
+</Base>
+
+<script is:inline>
+  (() => {
+    const wrap = document.querySelector('[data-ventures-wrap]');
+    const toggles = Array.from(document.querySelectorAll('[data-view-toggle]'));
+    if (!wrap || !toggles.length) return;
+
+    const setView = (view) => {
+      wrap.classList.toggle('grid-mode', view === 'grid');
+      toggles.forEach((toggle) => {
+        const active = toggle.getAttribute('data-view-toggle') === view;
+        toggle.classList.toggle('is-active', active);
+        toggle.setAttribute('aria-pressed', String(active));
+      });
+    };
+
+    toggles.forEach((toggle) => {
+      toggle.addEventListener('click', () => {
+        setView(toggle.getAttribute('data-view-toggle') === 'grid' ? 'grid' : 'list');
+      });
+    });
+  })();
+</script>

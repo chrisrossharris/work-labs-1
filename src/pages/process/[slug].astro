@@ -1,0 +1,49 @@
+---
+import Base from '@/layouts/Base.astro';
+import RevealText from '@/components/RevealText.astro';
+import { workPages, workPageBySlug } from '@/data/workPages';
+
+export function getStaticPaths() {
+  return workPages.map((page) => ({ params: { slug: page.slug } }));
+}
+
+const { slug } = Astro.params;
+const page = workPageBySlug(slug ?? '');
+
+if (!page) {
+  return Astro.redirect('/process');
+}
+---
+
+<Base title={`${page.title} | WORK Labs`}>
+  <div class="section-shell">
+    <section class="section-block">
+      <div class="kicker"><span class="section-number">{page.index} {page.label}</span><span>Process Page</span></div>
+      <RevealText as="h1" variant="title" class="route-title">{page.title}</RevealText>
+      <RevealText as="p" variant="para" class="mt-4 max-w-3xl text-sm">{page.summary}</RevealText>
+    </section>
+
+    <section class="section-block two-col">
+      <div>
+        <div class="kicker"><span class="section-number">Focus</span><span>WORK Labs</span></div>
+        <ul class="text-sm list-disc pl-5">
+          {page.bullets.map((item) => (
+            <li class="mt-3">{item}</li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <div class="kicker"><span class="section-number">Outcome</span><span>Business Result</span></div>
+        <p class="metric">{page.index}</p>
+        <p class="text-sm mt-3">{page.outcome}</p>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="hero-actions">
+        <a class="button cta-secondary" href="/process" data-transition-link>Back to Process</a>
+        <a class="button cta-primary" href="/contact" data-transition-link>Start a Project</a>
+      </div>
+    </section>
+  </div>
+</Base>

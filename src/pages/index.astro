@@ -1,170 +1,141 @@
 ---
 import Base from '@/layouts/Base.astro';
 import RevealText from '@/components/RevealText.astro';
+import { ventures } from '@/data/ventures';
 ---
 
-<Base title="WORK Launch Pad | Where Brand Becomes an Asset">
+<Base title="WORK Labs | Execution Arm">
   <div class="section-shell">
     <section class="section-block">
       <div class="kicker">
-        <span class="section-number">01 Hero</span>
-        <span>Creative Venture Studio & Execution Launchpad</span>
+        <span class="section-number">01 WORK Labs</span>
+        <span>Execution Arm / WORK Division</span>
       </div>
       <RevealText as="h1" variant="title" class="hero-title">
-        WORK Launch Pad<br />Always Thinking
+        WORK Labs<br />Builds It Through
       </RevealText>
       <RevealText as="p" variant="para" class="mt-6 max-w-3xl text-sm uppercase tracking-[0.14em]">
-        Where Brand Becomes an Asset
+        Best-of-class agency evolved for entrepreneur audiences: execution offerings, launch programs, and strategic retainers.
       </RevealText>
       <div class="hero-actions mt-6">
-        <a href="/contact" data-transition-link class="button cta-primary">Start a Partner Inquiry</a>
-        <a href="/ventures" data-transition-link class="button cta-secondary">Review Ventures</a>
+        <a href="/contact" data-transition-link class="button cta-primary">Start a Project</a>
+        <a href="/model" data-transition-link class="button cta-secondary">View Offerings</a>
+        <a href="/portfolio" data-transition-link class="button cta-secondary">View Portfolio</a>
+        <a href="/launchpad" data-transition-link class="button cta-secondary">Launchpad Program</a>
+        <a href="/work-hq" data-transition-link class="button cta-secondary">WORK-HQ Retainers</a>
       </div>
-      <form class="quick-brief mt-6" method="GET" action="/contact" data-transition-form>
-        <input type="hidden" name="source" value="quick-brief" />
-        <label class="quick-field">
-          <span>Company / Project</span>
-          <input name="company" type="text" required />
-        </label>
-        <label class="quick-field">
-          <span>Primary Goal</span>
-          <input name="goal" type="text" required />
-        </label>
-        <label class="quick-field">
-          <span>Timeline</span>
-          <input name="timeline" type="text" placeholder="e.g. next 90 days" required />
-        </label>
-        <button class="button cta-primary" type="submit">Send Quick Brief</button>
-      </form>
       <div class="fit-strip mt-6">
-        <p>Best fit: founder-led brands, operators, and teams building long-term asset value.</p>
+        <p>Best fit: teams that need senior-level execution without agency overhead.</p>
       </div>
     </section>
 
     <section class="section-block two-col">
       <div>
-        <div class="kicker"><span class="section-number">02 Problem</span><span>Undervalued Capital</span></div>
-        <RevealText as="h2" variant="title" class="display-title">Creativity is undervalued capital.</RevealText>
+        <div class="kicker"><span class="section-number">02 Why WORK Labs</span><span>Experience + Reputation</span></div>
+        <RevealText as="h2" variant="title" class="display-title">Built on decades of high-stakes brand work.</RevealText>
       </div>
       <RevealText as="p" variant="para" class="text-sm max-w-md">
-        Most companies spend on campaigns. Few build creative systems that compound valuation. The gap is not effort; it is infrastructure.
-      </RevealText>
-    </section>
-
-    <section class="section-block two-col">
-      <div>
-        <div class="kicker"><span class="section-number">03 Solution</span><span>WORK Launch Pad</span></div>
-        <RevealText as="h2" variant="title" class="display-title">Outthink the competition, not outspend them.</RevealText>
-      </div>
-      <RevealText as="p" variant="para" class="text-sm max-w-md">
-        WORK Launch Pad aligns strategy, brand engineering, and execution to convert creative work into owned assets.
+        Since 1994, WORK has supported agencies and direct clients on complex assignments. Today, WORK Labs is the operational core that turns strategy into finished assets, launches, and measurable business outcomes.
       </RevealText>
     </section>
 
     <section class="section-block">
-      <div class="kicker"><span class="section-number">04 The Model</span><span>Four Pillars</span></div>
+      <div class="kicker"><span class="section-number">03 What We Deliver</span><span>Modernized Offering</span></div>
       <div class="data-grid">
-        <article class="data-cell"><p class="text-xs uppercase tracking-[0.12em] text-slate">01</p><h3 class="mt-1 text-base">CI</h3><p class="text-sm">AI + HI = CI (Collaborative Intelligence)</p></article>
-        <article class="data-cell"><p class="text-xs uppercase tracking-[0.12em] text-slate">02</p><h3 class="mt-1 text-base">Brand Engineering</h3><p class="text-sm">Brand as an economic architecture, not a campaign wrapper.</p></article>
-        <article class="data-cell"><p class="text-xs uppercase tracking-[0.12em] text-slate">03</p><h3 class="mt-1 text-base">Execution Network</h3><p class="text-sm">Hybrid operator teams and specialized partners.</p></article>
-        <article class="data-cell"><p class="text-xs uppercase tracking-[0.12em] text-slate">04</p><h3 class="mt-1 text-base">Equity Alignment</h3><p class="text-sm">Retainers plus upside through equity, royalties, and ventures.</p></article>
+        <a class="data-cell" href="/process/execution-services" data-transition-link><p class="text-xs uppercase tracking-[0.12em] text-slate">01</p><h3 class="mt-1 text-base">Brand Systems</h3><p class="text-sm">Positioning, identity, messaging architecture, and launch-ready brand assets.</p></a>
+        <a class="data-cell" href="/process/streamlined-process" data-transition-link><p class="text-xs uppercase tracking-[0.12em] text-slate">02</p><h3 class="mt-1 text-base">Execution Ops</h3><p class="text-sm">Web, content, production, rollout planning, and implementation management.</p></a>
+        <a class="data-cell" href="/process/flexible-team" data-transition-link><p class="text-xs uppercase tracking-[0.12em] text-slate">03</p><h3 class="mt-1 text-base">Flex Leadership</h3><p class="text-sm">Fractional creative/brand leadership at critical moments in the business lifecycle.</p></a>
       </div>
-    </section>
-
-    <section class="section-block two-col">
-      <div>
-        <div class="kicker"><span class="section-number">05 Trivergent Thinking</span><span>Decision System</span></div>
-        <RevealText as="h2" variant="title" class="display-title">Cost / Time / Impact</RevealText>
-      </div>
-      <RevealText as="p" variant="para" class="text-sm max-w-md">
-        Every initiative is stress-tested through Trivergent Thinking: reduce cost drag, compress time-to-value, increase measurable impact.
-      </RevealText>
     </section>
 
     <section class="section-block">
-      <div class="kicker"><span class="section-number">06 Process</span><span>Discover to Dividend</span></div>
+      <div class="kicker"><span class="section-number">04 Process</span><span>Streamlined, Not Overprocessed</span></div>
       <RevealText as="p" variant="para" class="text-sm uppercase tracking-[0.12em]">
-        Discover → Define → Design → Develop → Deploy → Diversify → Dividend
+        Discover → Define → Design → Develop → Deploy → Measure → Refine
       </RevealText>
-    </section>
-
-    <section class="section-block">
-      <div class="kicker"><span class="section-number">07 Ecosystem</span><span>Network Map</span></div>
-      <div class="data-grid">
-        <article class="data-cell"><h3 class="text-base">WORK Labs</h3><p class="text-sm">Core studio engine for strategy + delivery.</p></article>
-        <article class="data-cell"><h3 class="text-base">WORK & Friends</h3><p class="text-sm">Curated network of operators and builders.</p></article>
-        <article class="data-cell"><h3 class="text-base">WORK Brands</h3><p class="text-sm">Owned and partner ventures built for equity growth.</p></article>
-        <article class="data-cell"><h3 class="text-base">Big Thinkers Brainstorming & Idea Co.</h3><p class="text-sm">Idea and innovation forum for future venture concepts.</p></article>
-        <article class="data-cell"><h3 class="text-base">Trivergent Thinking</h3><p class="text-sm">Unified decision frame for every launch and scale bet.</p></article>
+      <div class="data-grid mt-4">
+        <article class="data-cell"><p class="text-sm">Clear scope and faster decisions.</p></article>
+        <article class="data-cell"><p class="text-sm">Transform-first production for performance.</p></article>
+        <article class="data-cell"><p class="text-sm">No excess layers. No hidden process drag.</p></article>
       </div>
     </section>
 
     <section class="section-block two-col">
       <div>
-        <div class="kicker"><span class="section-number">08 Launch Lab</span><span>Operational Hub</span></div>
-        <RevealText as="h2" variant="title" class="display-title">Small hybrid studio. High-output core team.</RevealText>
+        <div class="kicker"><span class="section-number">05 Team Model</span><span>Best of Class Associates</span></div>
+        <RevealText as="h2" variant="title" class="display-title">Core studio + WORK & Friends network.</RevealText>
       </div>
       <div class="text-sm">
-        <p>Roles: Strategy Lead, Brand Engineer, Product Builder, Growth Operator, Venture CFO.</p>
-        <p class="mt-3">Operating note: approximately $6k/mo base studio overhead, intentionally lean.</p>
+        <p>WORK Labs leads strategy and execution from the center.</p>
+        <p class="mt-3">When needed, we pull specialized associates into the build: design, digital, content, production, media, and category experts.</p>
+        <p class="mt-3">You get flexible senior capacity without carrying full-time overhead.</p>
       </div>
     </section>
 
     <section class="section-block">
-      <div class="kicker"><span class="section-number">09 Revenue Streams</span><span>Compounding Mix</span></div>
+      <div class="kicker"><span class="section-number">06 Portfolio</span><span>Simplified View</span></div>
       <div class="data-grid">
-        <article class="data-cell"><p class="text-sm">Retainers</p></article>
-        <article class="data-cell"><p class="text-sm">Equity Positions</p></article>
-        <article class="data-cell"><p class="text-sm">Royalties</p></article>
-        <article class="data-cell"><p class="text-sm">Ecommerce</p></article>
-        <article class="data-cell"><p class="text-sm">Workshops</p></article>
-        <article class="data-cell"><p class="text-sm">Venture Partnerships</p></article>
+        {ventures.slice(0, 3).map((venture) => (
+          <a class="data-cell" href={`/portfolio/${venture.slug}`} data-transition-link data-flip-source={`venture-${venture.slug}`}>
+            <p class="text-xs uppercase tracking-[0.12em] text-slate">{venture.index}</p>
+            <h3 class="mt-2 text-base">{venture.name}</h3>
+            <p class="text-sm mt-2">{venture.focus}</p>
+            <p class="text-xs uppercase tracking-[0.1em] text-slate mt-3">{venture.metric}</p>
+          </a>
+        ))}
+      </div>
+      <div class="hero-actions mt-6">
+        <a href="/portfolio" data-transition-link class="button cta-secondary">Open Full Portfolio</a>
+        <a href="/testimonials" data-transition-link class="button cta-secondary">Read Testimonials</a>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div>
+        <div class="kicker"><span class="section-number">07 Program Tracks</span><span>Choose The Right Path</span></div>
+      </div>
+      <div class="data-grid">
+        <article class="data-cell">
+          <p class="text-xs uppercase tracking-[0.12em] text-slate">Track 01</p>
+          <h3 class="mt-2 text-base">WORK Launchpad Program</h3>
+          <p class="text-sm mt-2">For startups building from concept to launch with a structured WORK Labs process.</p>
+          <div class="hero-actions mt-4">
+            <a href="/launchpad" data-transition-link class="button cta-secondary">Go to Launchpad</a>
+          </div>
+        </article>
+        <article class="data-cell">
+          <p class="text-xs uppercase tracking-[0.12em] text-slate">Track 02</p>
+          <h3 class="mt-2 text-base">WORK-HQ</h3>
+          <p class="text-sm mt-2">Separate consulting track for system-thinking leadership and ongoing retainer support.</p>
+          <div class="hero-actions mt-4">
+            <a href="/work-hq" data-transition-link class="button cta-secondary">Go to WORK-HQ</a>
+          </div>
+        </article>
       </div>
     </section>
 
     <section class="section-block two-col">
       <div>
-        <div class="kicker"><span class="section-number">10 Roadmap</span><span>2025-2030</span></div>
-        <p class="metric">5 YEARS</p>
+        <div class="kicker"><span class="section-number">08 Next Step</span><span>Primary Action</span></div>
+        <RevealText as="h2" variant="title" class="display-title">Send a quick brief. We’ll scope the build.</RevealText>
       </div>
-      <div class="text-sm">
-        <p>2025: Infrastructure + flagship venture pilots</p>
-        <p>2026: Partner network expansion and repeatable launch sprints</p>
-        <p>2027: Brand portfolio growth and licensing systems</p>
-        <p>2028: New market entries + data-backed studio products</p>
-        <p>2029-2030: Dividend phase and ecosystem flywheel scale</p>
-      </div>
-    </section>
-
-    <section class="section-block">
-      <div class="kicker"><span class="section-number">11 Legacy</span><span>Long Horizon</span></div>
-      <RevealText as="h2" variant="title" class="display-title">Designed to outlive its founder.</RevealText>
-    </section>
-
-    <section class="section-block">
-      <div class="kicker"><span class="section-number">12 Library</span><span>Depth, Organized</span></div>
-      <div class="data-grid">
-        <a class="data-cell" href="/launchpad" data-transition-link><p class="text-xs uppercase tracking-[0.12em] text-slate">Offer</p><h3 class="mt-2 text-base">Launchpad</h3><p class="text-sm mt-2">End-to-end model, step sequence, and call qualification.</p></a>
-        <a class="data-cell" href="/beliefs" data-transition-link><p class="text-xs uppercase tracking-[0.12em] text-slate">Philosophy</p><h3 class="mt-2 text-base">Beliefs</h3><p class="text-sm mt-2">Core principles shaping strategy and execution decisions.</p></a>
-        <a class="data-cell" href="/testimonials" data-transition-link><p class="text-xs uppercase tracking-[0.12em] text-slate">Proof</p><h3 class="mt-2 text-base">Testimonials</h3><p class="text-sm mt-2">External perspective from senior industry leaders.</p></a>
-        <a class="data-cell" href="/flex-consultant" data-transition-link><p class="text-xs uppercase tracking-[0.12em] text-slate">Lifecycle</p><h3 class="mt-2 text-base">Flex Consultant</h3><p class="text-sm mt-2">Critical-stage framework from ideation to transformation.</p></a>
-        <a class="data-cell" href="/fees" data-transition-link><p class="text-xs uppercase tracking-[0.12em] text-slate">Commercial</p><h3 class="mt-2 text-base">Fee Structure</h3><p class="text-sm mt-2">Terms, scope boundaries, and streamline-first operations.</p></a>
-        <a class="data-cell" href="/library" data-transition-link><p class="text-xs uppercase tracking-[0.12em] text-slate">Index</p><h3 class="mt-2 text-base">Full Library</h3><p class="text-sm mt-2">Organized entry point for all long-form WORK material.</p></a>
-      </div>
-    </section>
-
-    <section class="section-block two-col">
       <div>
-        <div class="kicker"><span class="section-number">13 Next Step</span><span>Decision Point</span></div>
-        <RevealText as="h2" variant="title" class="display-title">Bring your next 12-month build plan.</RevealText>
-      </div>
-      <div class="text-sm">
-        <p>Primary action: start a partner inquiry with your context, constraints, and timeline.</p>
-        <p class="mt-3">Secondary action: review ventures to evaluate model fit and execution quality.</p>
-        <div class="hero-actions mt-6">
-          <a href="/contact" data-transition-link class="button cta-primary">Start Inquiry</a>
-          <a href="/ventures" data-transition-link class="button cta-secondary">View Ventures</a>
-        </div>
+        <form class="quick-brief" method="GET" action="/contact" data-transition-form>
+          <input type="hidden" name="source" value="work-labs-home" />
+          <label class="quick-field">
+            <span>Company / Project</span>
+            <input name="company" type="text" required />
+          </label>
+          <label class="quick-field">
+            <span>Primary Need</span>
+            <input name="goal" type="text" required />
+          </label>
+          <label class="quick-field">
+            <span>Timeline</span>
+            <input name="timeline" type="text" placeholder="e.g. next 90 days" required />
+          </label>
+          <button class="button cta-primary" type="submit">Send Quick Brief</button>
+        </form>
       </div>
     </section>
   </div>

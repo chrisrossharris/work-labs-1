@@ -1,0 +1,10 @@
+---
+import { workPages } from '@/data/workPages';
+
+export function getStaticPaths() {
+  return workPages.map((page) => ({ params: { slug: page.slug } }));
+}
+
+const { slug } = Astro.params;
+return Astro.redirect(`/process/${slug ?? ''}`, 301);
+---

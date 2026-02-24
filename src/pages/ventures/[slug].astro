@@ -1,41 +1,10 @@
 ---
-import Base from '@/layouts/Base.astro';
-import RevealText from '@/components/RevealText.astro';
-import { ventures, ventureBySlug } from '@/data/ventures';
+import { ventures } from '@/data/ventures';
 
 export function getStaticPaths() {
   return ventures.map((venture) => ({ params: { slug: venture.slug } }));
 }
 
 const { slug } = Astro.params;
-const venture = ventureBySlug(slug ?? '');
-
-if (!venture) {
-  return Astro.redirect('/ventures');
-}
+return Astro.redirect(`/portfolio/${slug ?? ''}`, 301);
 ---
-
-<Base title={`${venture.name} | WORK Launch Pad`}>
-  <div class="section-shell">
-    <section class="section-block">
-      <div class="kicker"><span class="section-number">{venture.index} Detail</span><span>{venture.stage}</span></div>
-      <RevealText as="h1" variant="title" class="route-title" flipKey={`venture-${venture.slug}`}>{venture.name}</RevealText>
-      <RevealText as="p" variant="para" class="mt-4 max-w-3xl text-sm">{venture.thesis}</RevealText>
-    </section>
-
-    <section class="section-block two-col">
-      <div>
-        <div class="kicker"><span class="section-number">Focus</span><span>{venture.focus}</span></div>
-        <p class="text-sm">{venture.note}</p>
-      </div>
-      <div>
-        <div class="kicker"><span class="section-number">Target Metric</span><span>Execution KPI</span></div>
-        <p class="metric">{venture.metric.replace('Target: ', '')}</p>
-      </div>
-    </section>
-
-    <section class="section-block">
-      <a class="button" href="/ventures" data-transition-link>Back to Ventures</a>
-    </section>
-  </div>
-</Base>

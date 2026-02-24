@@ -5,7 +5,7 @@ interface Props {
   title?: string;
 }
 
-const { title = 'WORK Launch Pad' } = Astro.props;
+const { title = 'WORK Labs' } = Astro.props;
 ---
 
 <!doctype html>
@@ -14,21 +14,21 @@ const { title = 'WORK Launch Pad' } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
-    <meta name="description" content="WORK Launch Pad - Creative Venture Studio and Execution Launchpad" />
+    <meta name="description" content="WORK Labs - execution arm for brand systems, launches, and growth operations." />
     <link rel="stylesheet" href="https://use.typekit.net/hyz5gvd.css" />
   </head>
   <body class="bg-paper text-ink">
     <div id="swup" class="transition-fade min-h-screen" data-swup-container>
       <header class="site-header">
-        <a href="/" class="brand" data-transition-link>WORK Launch Pad</a>
+        <a href="/" class="brand" data-transition-link>WORK Labs</a>
         <nav>
           <ul class="nav-list">
             <li><a href="/about" data-transition-link data-flip-source="about-title" data-flip-key="about-title">About</a></li>
-            <li><a href="/model" data-transition-link>Model</a></li>
-            <li><a href="/launchpad" data-transition-link>Launchpad</a></li>
-            <li><a href="/ventures" data-transition-link>Ventures</a></li>
-            <li><a href="/library" data-transition-link>Library</a></li>
-            <li><a href="/design-system" data-transition-link>System</a></li>
+            <li><a href="/process" data-transition-link>Process</a></li>
+            <li><a href="/model" data-transition-link>Offerings</a></li>
+            <li><a href="/launchpad" data-transition-link>Launchpad Program</a></li>
+            <li><a href="/work-hq" data-transition-link>WORK-HQ</a></li>
+            <li><a href="/portfolio" data-transition-link>Portfolio</a></li>
             <li><a href="/contact" data-transition-link>Contact</a></li>
           </ul>
         </nav>
@@ -37,7 +37,7 @@ const { title = 'WORK Launch Pad' } = Astro.props;
         <slot />
       </main>
     </div>
-    <script type="module">
+    <script>
       import '../lib/boot.ts';
     </script>
   </body>
