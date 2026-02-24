@@ -1,0 +1,93 @@
+---
+import Base from '@/layouts/Base.astro';
+import RevealText from '@/components/RevealText.astro';
+---
+
+<Base title="Design System | WORK Launch Pad">
+  <div class="section-shell">
+    <section class="section-block">
+      <div class="kicker"><span class="section-number">01 System</span><span>WORK Labs Operating Sheet</span></div>
+      <RevealText as="h1" variant="title" class="route-title">Design System</RevealText>
+      <div class="fit-strip mt-6"><p>Single source of truth for typography, color, layout, motion, and UI parts.</p></div>
+    </section>
+
+    <section class="section-block">
+      <div class="kicker"><span class="section-number">02 Type Scale</span><span>Trade Gothic Next</span></div>
+      <div class="data-grid">
+        <article class="data-cell"><p class="text-xs uppercase tracking-[0.12em] text-slate">Display XL / 9.2rem max</p><p class="hero-title">Always Thinking</p><p class="text-xs uppercase tracking-[0.1em] text-slate mt-2">Use: Hero headlines</p></article>
+        <article class="data-cell"><p class="text-xs uppercase tracking-[0.12em] text-slate">Display / 5.2rem max</p><p class="display-title">Where Brand Becomes an Asset</p><p class="text-xs uppercase tracking-[0.1em] text-slate mt-2">Use: Section statements</p></article>
+        <article class="data-cell"><p class="text-xs uppercase tracking-[0.12em] text-slate">Route Title / 7.4rem max</p><p class="route-title">System</p><p class="text-xs uppercase tracking-[0.1em] text-slate mt-2">Use: Page identity</p></article>
+        <article class="data-cell"><p class="text-xs uppercase tracking-[0.12em] text-slate">Body / 0.78rem</p><p class="text-sm">Execution infrastructure over campaign noise. Build for valuation and continuity.</p><p class="text-xs uppercase tracking-[0.1em] text-slate mt-2">Line height: 1.2</p></article>
+        <article class="data-cell"><p class="text-xs uppercase tracking-[0.12em] text-slate">Kicker / 0.62rem</p><p class="kicker-demo">Section Label / Meta</p><p class="text-xs uppercase tracking-[0.1em] text-slate mt-2">Tracking: 0.18em</p></article>
+        <article class="data-cell"><p class="text-xs uppercase tracking-[0.12em] text-slate">Metric / 7rem max</p><p class="metric">60,754</p><p class="text-xs uppercase tracking-[0.1em] text-slate mt-2">Use: Quant proof</p></article>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="kicker"><span class="section-number">03 Colors</span><span>Token Set</span></div>
+      <div class="swatch-grid">
+        <article class="swatch" style="--swatch: var(--paper)">
+          <p>PAPER</p>
+          <p>#dddeda</p>
+          <p>Base canvas</p>
+        </article>
+        <article class="swatch" style="--swatch: var(--ink)">
+          <p>INK</p>
+          <p>#0f0f0f</p>
+          <p>Primary text</p>
+        </article>
+        <article class="swatch" style="--swatch: var(--cyan)">
+          <p>CYAN</p>
+          <p>#3bbfd7</p>
+          <p>Metrics / accents</p>
+        </article>
+        <article class="swatch" style="--swatch: var(--slate)">
+          <p>SLATE</p>
+          <p>#666861</p>
+          <p>Meta labels</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-block two-col">
+      <div>
+        <div class="kicker"><span class="section-number">04 Layout</span><span>Grid Discipline</span></div>
+        <p class="text-sm">Primary content wrapper: `min(1240px, 100% - 2.5rem)` with strict ruled sections and 12-column module splits.</p>
+      </div>
+      <div class="layout-demo" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="kicker"><span class="section-number">05 Spacing Scale</span><span>Rhythm</span></div>
+      <div class="data-grid">
+        <article class="data-cell"><p class="text-xs uppercase tracking-[0.12em] text-slate">XS</p><p class="space-sample" style="--space: 0.3rem">0.3rem</p></article>
+        <article class="data-cell"><p class="text-xs uppercase tracking-[0.12em] text-slate">SM</p><p class="space-sample" style="--space: 0.6rem">0.6rem</p></article>
+        <article class="data-cell"><p class="text-xs uppercase tracking-[0.12em] text-slate">MD</p><p class="space-sample" style="--space: 1rem">1rem</p></article>
+        <article class="data-cell"><p class="text-xs uppercase tracking-[0.12em] text-slate">LG</p><p class="space-sample" style="--space: 1.6rem">1.6rem</p></article>
+        <article class="data-cell"><p class="text-xs uppercase tracking-[0.12em] text-slate">XL</p><p class="space-sample" style="--space: 2.4rem">2.4rem</p></article>
+        <article class="data-cell"><p class="text-xs uppercase tracking-[0.12em] text-slate">XXL</p><p class="space-sample" style="--space: 3.4rem">3.4rem</p></article>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="kicker"><span class="section-number">06 Components</span><span>UI Kit</span></div>
+      <div class="data-grid">
+        <article class="data-cell"><p class="text-xs uppercase tracking-[0.12em] text-slate">Buttons</p><div class="hero-actions mt-3"><button class="button cta-primary">Primary</button><button class="button cta-secondary">Secondary</button></div><p class="text-xs uppercase tracking-[0.1em] text-slate mt-3">Action hierarchy</p></article>
+        <article class="data-cell"><p class="text-xs uppercase tracking-[0.12em] text-slate">Pill</p><span class="pill mt-3">Validation</span><p class="text-xs uppercase tracking-[0.1em] text-slate mt-3">Status and stage tags</p></article>
+        <article class="data-cell"><p class="text-xs uppercase tracking-[0.12em] text-slate">Card</p><div class="venture-card mt-3"><h3 class="venture-title">Atlas CPG</h3><p class="text-sm">Hybrid asset model</p><p class="text-xs uppercase tracking-[0.1em] text-slate mt-2">Target: 18-month payback</p></div></article>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="kicker"><span class="section-number">07 Motion Rules</span><span>Performance First</span></div>
+      <div class="data-grid">
+        <article class="data-cell"><p class="text-xs uppercase tracking-[0.12em] text-slate">Text Reveals</p><p class="text-sm">Title: char split. Paragraph: line split. Fallback: opacity + translate.</p><p class="text-xs uppercase tracking-[0.1em] text-slate mt-3">Duration: 0.55-0.65s</p></article>
+        <article class="data-cell"><p class="text-xs uppercase tracking-[0.12em] text-slate">Transitions</p><p class="text-sm">Swup route lifecycle with leave cleanup and enter replay.</p><p class="text-xs uppercase tracking-[0.1em] text-slate mt-3">Constraint: transform-only</p></article>
+        <article class="data-cell"><p class="text-xs uppercase tracking-[0.12em] text-slate">Continuity</p><p class="text-sm">Flip used for nav-to-title and ventures list-to-detail handoff.</p><p class="text-xs uppercase tracking-[0.1em] text-slate mt-3">Reduced motion respected</p></article>
+      </div>
+    </section>
+  </div>
+</Base>

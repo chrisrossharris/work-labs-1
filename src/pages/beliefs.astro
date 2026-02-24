@@ -1,0 +1,37 @@
+---
+import Base from '@/layouts/Base.astro';
+import RevealText from '@/components/RevealText.astro';
+
+const beliefs = [
+  'Candor saves time.',
+  'A great strategy predictably executed can still be a waste of money.',
+  'A brand must know what to say before deciding how to say it.',
+  'Working with clients gets better results than working for clients.',
+  'Creative that does not solve a business problem is a business problem.',
+  'If you cannot outspend the competition, outthink them.',
+  'Experience is an asset, not a liability.',
+  'Like-minded rooms are often low-yield rooms.',
+  'What comes out of your head depends on what you put into it.'
+];
+---
+
+<Base title="Beliefs | WORK Launch Pad">
+  <div class="section-shell">
+    <section class="section-block">
+      <div class="kicker"><span class="section-number">01 Beliefs</span><span>Operating Philosophy</span></div>
+      <RevealText as="h1" variant="title" class="route-title">Beliefs</RevealText>
+    </section>
+
+    <section class="section-block">
+      <div class="kicker"><span class="section-number">02 Principles</span><span>What We Practice</span></div>
+      <div class="data-grid">
+        {beliefs.map((belief, i) => (
+          <article class="data-cell">
+            <p class="text-xs uppercase tracking-[0.12em] text-slate">{String(i + 1).padStart(2, '0')}</p>
+            <p class="text-sm mt-2">{belief}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  </div>
+</Base>

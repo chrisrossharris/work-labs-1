@@ -141,7 +141,7 @@ a {
 .data-cell {
   border: 1px solid var(--ink);
   padding: 0.85rem;
-  min-height: 7rem;
+  min-height: 10.5rem;
   background: color-mix(in srgb, var(--paper) 98%, #fff 2%);
 }
 
@@ -171,7 +171,7 @@ a {
 
 .venture-card {
   border: 1px solid var(--ink);
-  min-height: 40svh;
+  min-height: 46svh;
   padding: 1rem;
   transform-origin: center;
   display: flex;
@@ -296,6 +296,61 @@ a {
   text-transform: uppercase;
 }
 
+.kicker-demo {
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+.swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.swatch {
+  border: 1px solid var(--ink);
+  padding: 0.7rem;
+  background: var(--swatch);
+  color: color-mix(in srgb, var(--swatch), #000 85%);
+  min-height: 11rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.swatch p {
+  margin: 0;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.layout-demo {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 0.35rem;
+  min-height: 8rem;
+  align-items: end;
+}
+
+.layout-demo span {
+  display: block;
+  min-height: 5rem;
+  border: 1px solid var(--ink);
+  background: color-mix(in srgb, var(--paper) 92%, var(--cyan) 8%);
+}
+
+.space-sample {
+  margin: 0.8rem 0 0;
+  border: 1px solid var(--ink);
+  background: color-mix(in srgb, var(--paper) 95%, var(--cyan) 5%);
+  padding: var(--space);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
 .route-title {
   font-family: 'trade-gothic-next-condensed', 'trade-gothic-next', sans-serif;
   font-size: clamp(2.9rem, 8vw, 7.4rem);
@@ -315,7 +370,8 @@ a {
   }
 
   .data-grid,
-  .ventures-wrap.grid-mode {
+  .ventures-wrap.grid-mode,
+  .swatch-grid {
     grid-template-columns: 1fr;
   }
 

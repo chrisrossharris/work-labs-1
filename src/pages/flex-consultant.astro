@@ -1,0 +1,54 @@
+---
+import Base from '@/layouts/Base.astro';
+import RevealText from '@/components/RevealText.astro';
+
+const stages = [
+  {
+    title: 'Ideation + Planning',
+    detail: 'Define concept, value proposition, category fit, and brand architecture.'
+  },
+  {
+    title: 'Startup + Launch',
+    detail: 'Set go-to-market priorities, build launch assets, and sequence early traction.'
+  },
+  {
+    title: 'Growth + Expansion',
+    detail: 'Scale operations, sharpen messaging, and align systems to demand.'
+  },
+  {
+    title: 'Maturity + Stability',
+    detail: 'Protect positioning, simplify workflows, and maintain margin discipline.'
+  },
+  {
+    title: 'Transformation',
+    detail: 'Reinvent model and narrative to stay relevant as markets shift.'
+  }
+];
+---
+
+<Base title="Flex Consultant | WORK Launch Pad">
+  <div class="section-shell">
+    <section class="section-block two-col">
+      <div>
+        <div class="kicker"><span class="section-number">01 Flex Consultant</span><span>Critical Stage Thinker</span></div>
+        <RevealText as="h1" variant="title" class="route-title">Flex Consultant</RevealText>
+      </div>
+      <RevealText as="p" variant="para" class="text-sm max-w-md">
+        Strategic and creative leadership embedded at pivotal stages of a business lifecycle.
+      </RevealText>
+    </section>
+
+    <section class="section-block">
+      <div class="kicker"><span class="section-number">02 Lifecycle</span><span>Five Critical Stages</span></div>
+      <div class="data-grid">
+        {stages.map((stage, i) => (
+          <article class="data-cell">
+            <p class="text-xs uppercase tracking-[0.12em] text-slate">{String(i + 1).padStart(2, '0')}</p>
+            <h3 class="mt-2 text-base">{stage.title}</h3>
+            <p class="text-sm mt-2">{stage.detail}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  </div>
+</Base>

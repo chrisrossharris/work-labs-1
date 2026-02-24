@@ -1,0 +1,53 @@
+---
+import Base from '@/layouts/Base.astro';
+import RevealText from '@/components/RevealText.astro';
+
+const testimonials = [
+  {
+    quote: 'A master of the craft and an inspiration to all channels of marketing.',
+    by: 'David Angelo / Founder & Chairman / David&Goliath LA'
+  },
+  {
+    quote: 'A Creative who consistently performs at a high level across a broad range of mediums.',
+    by: 'Mark Waites / Founding Partner / Mother London'
+  },
+  {
+    quote: 'A man of unstoppable thinking, wonderful ideas, and brilliant art direction.',
+    by: 'Rob Schwartz / Global Creative President / TBWA'
+  },
+  {
+    quote: 'A remarkable human with an insatiable creative mind. His ideas have no end.',
+    by: 'Katherine Wintsch / Founder & CEO / The Mom Complex'
+  },
+  {
+    quote: 'World class talent and idea machine who helps brands stand out in a frenzied marketplace.',
+    by: 'Don Just / VCU Brandcenter / Former President, The Martin Agency'
+  },
+  {
+    quote: 'Creative mind matched by strategic depth.',
+    by: 'Joe Feczko / SVP Integration & Broadcast / Macy’s Inc.'
+  }
+];
+---
+
+<Base title="Testimonials | WORK Launch Pad">
+  <div class="section-shell">
+    <section class="section-block">
+      <div class="kicker"><span class="section-number">01 Testimonials</span><span>Industry Perspective</span></div>
+      <RevealText as="h1" variant="title" class="route-title">What Partners Say</RevealText>
+    </section>
+
+    <section class="section-block">
+      <div class="kicker"><span class="section-number">02 Proof</span><span>Reputation Signals</span></div>
+      <div class="data-grid">
+        {testimonials.map((item, i) => (
+          <article class="data-cell">
+            <p class="text-xs uppercase tracking-[0.12em] text-slate">{String(i + 1).padStart(2, '0')}</p>
+            <p class="text-sm mt-2">"{item.quote}"</p>
+            <p class="text-xs uppercase tracking-[0.1em] text-slate mt-3">{item.by}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  </div>
+</Base>
