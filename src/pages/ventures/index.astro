@@ -1,0 +1,37 @@
+---
+import Base from '@/layouts/Base.astro';
+import RevealText from '@/components/RevealText.astro';
+import { ventures } from '@/data/ventures';
+---
+
+<Base title="Ventures | WORK Launch Pad">
+  <div class="section-shell">
+    <section class="section-block">
+      <div class="kicker"><span class="section-number">01 Ventures</span><span>Live Portfolio</span></div>
+      <RevealText as="h1" variant="title" class="route-title">Ventures</RevealText>
+      <div class="toggle-row">
+        <button class="button" type="button" data-grid-toggle>View Grid</button>
+      </div>
+      <div class="ventures-wrap" data-ventures-wrap>
+        {ventures.map((venture) => (
+          <a
+            class="venture-card"
+            href={`/ventures/${venture.slug}`}
+            data-transition-link
+            data-flip-source={`venture-${venture.slug}`}
+          >
+            <div>
+              <p class="text-xs uppercase tracking-[0.12em] text-slate">{venture.index}</p>
+              <h2 class="venture-title">{venture.name}</h2>
+            </div>
+            <div>
+              <span class="pill">{venture.stage}</span>
+              <p class="mt-3 text-sm">{venture.focus}</p>
+              <p class="mt-2 text-xs uppercase tracking-[0.1em] text-slate">{venture.metric}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+  </div>
+</Base>

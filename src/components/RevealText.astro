@@ -1,0 +1,21 @@
+---
+interface Props {
+  as?: 'h1' | 'h2' | 'h3' | 'p' | 'span';
+  variant?: 'title' | 'para';
+  class?: string;
+  flipKey?: string;
+}
+
+const {
+  as = 'p',
+  variant = 'para',
+  class: className = '',
+  flipKey
+} = Astro.props;
+
+const Tag = as;
+---
+
+<Tag class:list={['reveal-text', className]} data-reveal={variant} data-flip-key={flipKey}>
+  <slot />
+</Tag>
