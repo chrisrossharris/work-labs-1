@@ -1,6 +1,7 @@
 ---
 import Base from '@/layouts/Base.astro';
 import RevealText from '@/components/RevealText.astro';
+import { getBookingLinkAttrs } from '@/data/booking';
 ---
 
 <Base title="Fees | WORK Labs">
@@ -32,7 +33,8 @@ import RevealText from '@/components/RevealText.astro';
         <p class="text-sm">Integrated senior thinking and execution infrastructure reduces overhead fragmentation and keeps decisions tied to business outcomes.</p>
         <div class="hero-actions mt-6">
           <a href="/launchpad" data-transition-link class="button cta-secondary">View Launchpad</a>
-          <a href="/contact" data-transition-link class="button cta-primary">Discuss Scope</a>
+          <a {...getBookingLinkAttrs({ source: 'fees-cta', track: 'fees' })} class="button cta-primary">Discuss Scope</a>
+          <button type="button" class="button cta-secondary is-disabled" aria-disabled="true">Schedule a Call</button>
         </div>
       </div>
     </section>

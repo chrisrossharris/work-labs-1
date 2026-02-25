@@ -2,6 +2,7 @@
 import Base from '@/layouts/Base.astro';
 import RevealText from '@/components/RevealText.astro';
 import { workPages, workPageBySlug } from '@/data/workPages';
+import { getBookingLinkAttrs } from '@/data/booking';
 
 export function getStaticPaths() {
   return workPages.map((page) => ({ params: { slug: page.slug } }));
@@ -42,7 +43,8 @@ if (!page) {
     <section class="section-block">
       <div class="hero-actions">
         <a class="button cta-secondary" href="/process" data-transition-link>Back to Process</a>
-        <a class="button cta-primary" href="/contact" data-transition-link>Start a Project</a>
+        <a {...getBookingLinkAttrs({ source: `process-${page.slug}`, track: 'process' })} class="button cta-primary">Start a Project</a>
+        <button type="button" class="button cta-secondary is-disabled" aria-disabled="true">Schedule a Call</button>
       </div>
     </section>
   </div>

@@ -45,9 +45,11 @@ export async function runReveals(scope: ParentNode = document) {
   }
 
   targets.forEach((target) => {
-    const mode = target.dataset.reveal === 'title' ? 'chars' : 'lines';
+    const isTitle = target.dataset.reveal === 'title';
+    const mode = isTitle ? 'chars' : 'lines';
     const split = SplitText.create(target, {
-      type: mode,
+      type: isTitle ? 'words,chars' : 'lines',
+      wordsClass: 'reveal-word',
       linesClass: 'reveal-line',
       charsClass: 'reveal-char',
       autoSplit: true,

@@ -50,9 +50,15 @@ a {
 }
 
 .brand {
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+}
+
+.brand-mark {
+  display: block;
+  width: clamp(85px, 9vw, 121px);
+  height: auto;
 }
 
 .nav-list {
@@ -157,6 +163,11 @@ a {
 .reveal-char {
   display: inline-block;
   will-change: transform, opacity;
+}
+
+.reveal-word {
+  display: inline-block;
+  white-space: nowrap;
 }
 
 .ventures-wrap {
@@ -275,6 +286,13 @@ a {
 .cta-secondary {
   background: transparent;
   color: var(--ink);
+}
+
+.button.is-disabled,
+.button[aria-disabled='true'] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .fit-strip {
@@ -405,12 +423,12 @@ a {
   text-transform: uppercase;
 }
 
-.workhq-title {
+.workprism-title {
   max-width: 13ch;
   line-height: 0.92;
 }
 
-.workhq-hero-meta {
+.workprism-hero-meta {
   margin-top: 1rem;
   display: flex;
   flex-wrap: wrap;
@@ -460,6 +478,10 @@ a {
     gap: 0.8rem;
   }
 
+  .brand-mark {
+    width: clamp(60px, 14vw, 85px);
+  }
+
   .quick-brief,
   .contact-form {
     grid-template-columns: 1fr;
@@ -469,11 +491,11 @@ a {
     grid-column: auto;
   }
 
-  .workhq-title {
+  .workprism-title {
     max-width: none;
   }
 
-  .workhq-hero-meta {
+  .workprism-hero-meta {
     align-items: flex-start;
   }
 }

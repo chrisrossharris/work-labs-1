@@ -1,6 +1,10 @@
 ---
 import Base from '@/layouts/Base.astro';
 import RevealText from '@/components/RevealText.astro';
+import { bookingConfig, getBookingHref, hasBookingEmbedCode } from '@/data/booking';
+
+const bookingHref = getBookingHref({ source: 'contact-page', track: 'contact' });
+const bookingLabel = bookingConfig.mode === 'link' ? 'Book on Cal.com' : 'Open Booking';
 ---
 
 <Base title="Contact | WORK Labs">
@@ -9,7 +13,7 @@ import RevealText from '@/components/RevealText.astro';
       <div class="kicker"><span class="section-number">01 Contact</span><span>Partner Inquiry</span></div>
       <RevealText as="h1" variant="title" class="route-title">Partner Inquiry</RevealText>
       <RevealText as="p" variant="para" class="mt-5 max-w-2xl text-sm">
-        Share your current stage, constraints, and desired outcomes. Note whether this is for WORK Labs execution, Launchpad startup program, or WORK-HQ retainers.
+        Share your current stage, constraints, and desired outcomes. Note whether this is for WORK Labs execution, Launchpad startup program, or WORK Prism retainers.
       </RevealText>
     </section>
 
@@ -37,7 +41,7 @@ import RevealText from '@/components/RevealText.astro';
         </label>
         <label class="quick-field">
           <span>Inquiry Type</span>
-          <input id="contact-track" name="track" type="text" placeholder="WORK Labs / Launchpad / WORK-HQ" />
+          <input id="contact-track" name="track" type="text" placeholder="WORK Labs / Launchpad / WORK Prism" />
         </label>
         <label class="quick-field">
           <span>Timeline</span>
@@ -54,6 +58,24 @@ import RevealText from '@/components/RevealText.astro';
         <button class="button cta-primary" type="submit">Send Partner Inquiry</button>
       </form>
       <p class="form-note mt-4">If mail client submit is blocked, email partners@worklabs.com directly with the same fields.</p>
+    </section>
+
+    <section class="section-block" id="book">
+      <div class="kicker"><span class="section-number">04 Booking</span><span>Cal.com Ready</span></div>
+      {bookingConfig.mode === 'embed' ? (
+        hasBookingEmbedCode ? (
+          <div set:html={bookingConfig.embedCode}></div>
+        ) : (
+          <article class="data-cell">
+            <p class="text-sm">Set `bookingConfig.embedCode` in `src/data/booking.ts` to render your Cal.com embed here.</p>
+            <p class="text-sm mt-2">You can also switch `bookingConfig.mode` to `link` to use a direct booking URL.</p>
+          </article>
+        )
+      ) : (
+        <div class="hero-actions">
+          <a href={bookingHref} target="_blank" rel="noopener noreferrer" class="button cta-primary">{bookingLabel}</a>
+        </div>
+      )}
     </section>
   </div>
   <script type="module">

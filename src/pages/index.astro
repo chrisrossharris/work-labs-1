@@ -2,6 +2,7 @@
 import Base from '@/layouts/Base.astro';
 import RevealText from '@/components/RevealText.astro';
 import { ventures } from '@/data/ventures';
+import { getBookingLinkAttrs } from '@/data/booking';
 ---
 
 <Base title="WORK Labs | Execution Arm">
@@ -18,11 +19,12 @@ import { ventures } from '@/data/ventures';
         Best-of-class agency evolved for entrepreneur audiences: execution offerings, launch programs, and strategic retainers.
       </RevealText>
       <div class="hero-actions mt-6">
-        <a href="/contact" data-transition-link class="button cta-primary">Start a Project</a>
+        <a {...getBookingLinkAttrs({ source: 'home-hero', track: 'work-labs' })} class="button cta-primary">Start a Project</a>
+        <button type="button" class="button cta-secondary is-disabled" aria-disabled="true">Schedule a Call</button>
         <a href="/model" data-transition-link class="button cta-secondary">View Offerings</a>
         <a href="/portfolio" data-transition-link class="button cta-secondary">View Portfolio</a>
         <a href="/launchpad" data-transition-link class="button cta-secondary">Launchpad Program</a>
-        <a href="/work-hq" data-transition-link class="button cta-secondary">WORK-HQ Retainers</a>
+        <a href="/work-prism" data-transition-link class="button cta-secondary">WORK Prism Retainers</a>
       </div>
       <div class="fit-strip mt-6">
         <p>Best fit: teams that need senior-level execution without agency overhead.</p>
@@ -105,10 +107,10 @@ import { ventures } from '@/data/ventures';
         </article>
         <article class="data-cell">
           <p class="text-xs uppercase tracking-[0.12em] text-slate">Track 02</p>
-          <h3 class="mt-2 text-base">WORK-HQ</h3>
+          <h3 class="mt-2 text-base">WORK Prism</h3>
           <p class="text-sm mt-2">Separate consulting track for system-thinking leadership and ongoing retainer support.</p>
           <div class="hero-actions mt-4">
-            <a href="/work-hq" data-transition-link class="button cta-secondary">Go to WORK-HQ</a>
+            <a href="/work-prism" data-transition-link class="button cta-secondary">Go to WORK Prism</a>
           </div>
         </article>
       </div>

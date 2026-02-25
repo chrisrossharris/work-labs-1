@@ -1,6 +1,7 @@
 ---
 import Base from '@/layouts/Base.astro';
 import RevealText from '@/components/RevealText.astro';
+import { getBookingLinkAttrs } from '@/data/booking';
 
 const offerings = [
   {
@@ -35,7 +36,7 @@ const offerings = [
   },
   {
     index: '06',
-    title: 'WORK-HQ Retainers',
+    title: 'WORK Prism Retainers',
     audience: 'Founder and leadership teams',
     detail: 'Consulting services and system-thinking retainers for ongoing advisory support. Distinct from production-focused execution.'
   }
@@ -77,8 +78,9 @@ const offerings = [
       </div>
       <div class="hero-actions">
         <a class="button cta-secondary" href="/launchpad" data-transition-link>View Launchpad Program</a>
-        <a class="button cta-secondary" href="/work-hq" data-transition-link>View WORK-HQ Retainers</a>
-        <a class="button cta-primary" href="/contact" data-transition-link>Discuss Best Fit</a>
+        <a class="button cta-secondary" href="/work-prism" data-transition-link>View WORK Prism Retainers</a>
+        <a {...getBookingLinkAttrs({ source: 'offerings-cta', track: 'offerings' })} class="button cta-primary">Discuss Best Fit</a>
+        <button type="button" class="button cta-secondary is-disabled" aria-disabled="true">Schedule a Call</button>
       </div>
     </section>
   </div>
